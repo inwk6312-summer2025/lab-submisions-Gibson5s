@@ -1,0 +1,10 @@
+hostname R2
+
+interface Loopback0
+ ip address 150.1.2.2/32
+
+
+interface G1/2
+ description Link to R1
+ ip address 155.1.12.2/24
+ no shutdown
