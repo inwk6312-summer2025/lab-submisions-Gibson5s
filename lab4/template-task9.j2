@@ -1,0 +1,11 @@
+hostname {{ router }}
+
+interface Loopback0
+ ip address {{ data.loopback }}
+
+{% for iface, props in data.interfaces.items() %}
+interface {{ iface }}
+ description {{ props.description }}
+ ip address {{ props.ip }}
+ no shutdown
+{% endfor %}
